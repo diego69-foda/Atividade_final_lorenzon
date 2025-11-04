@@ -3,8 +3,8 @@ import java.io.*;
 import java.util.*;
 public class Clientes {
     String nome;
-    int idade;
-    String cpf;
+    int senha;
+    String email;
 
     public Pedidos fazerPedido(Produtos produto, Descontos desconto) {
         Pedidos pedido = new Pedidos();
