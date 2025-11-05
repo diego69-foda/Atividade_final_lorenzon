@@ -50,3 +50,5 @@ o trabalho sera sobre um E-commerce de Roupas
 Uma loja de roupas online precisa gerenciar clientes, produtos, carrinhos de compra e pedidos. O sistema deve
 considerar categorias diferentes de produtos e permitir aplicar descontos ou promoções. Sugestão de entidades:
 Produto, Cliente, Carrinho, Pedido;
+
+tentar impementar senha para clientes para login e cadastro

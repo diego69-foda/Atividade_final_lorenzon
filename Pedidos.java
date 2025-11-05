@@ -6,5 +6,5 @@ public class Pedidos {
     int id;
     Clientes cliente;
     Descontos desconto;
-    Produtos produto;
+    Produtos produto[];
 }
