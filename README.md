@@ -52,3 +52,5 @@ considerar categorias diferentes de produtos e permitir aplicar descontos ou pro
 Produto, Cliente, Carrinho, Pedido;
 
 tentar impementar senha para clientes para login e cadastro
+
+cuidar as entidades. Cliente, Produto e Carrinho como uma associação com cliente e agregação de produtos. POderiam trabalhar com fechamento do carrinho, forma de pagamento, cupom de desconto. Como um catálogo de produto, compra e fechamento de compra

@@ -120,7 +120,7 @@ public class Video {
 
     // --- Mensagem de cofirmação --- 
     public static boolean confirmar(String pergunta) {        
-        String resposta = Teclado.readString(pergunta + " (s/n): ").nextLine().trim().toLowerCase();
+        String resposta = Teclado2.read(pergunta + " (s/n): ",String.class).trim().toLowerCase();
         return resposta.equals("s") || resposta.equals("sim");
     }
 

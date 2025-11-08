@@ -1,8 +1,6 @@
-package temadogrupo.menu;
+package utilitarios;
 
 import java.util.ArrayList;
-import temadogrupo.utilitarios.Teclado;
-import temadogrupo.utilitarios.Video;
 
 
 public class Menu {
@@ -26,7 +24,7 @@ public class Menu {
 
         int opcaoEscolhida;
         do {            
-            opcaoEscolhida = Teclado.readInt("Qual a sua opção: "); 
+            opcaoEscolhida = Teclado2.read("Qual a sua opção: ", Integer.class); 
             if (opcaoEscolhida < 1 || opcaoEscolhida > opcoesMenu.size()) {
                 Video.mensagemAlerta("Opção inválida, tente novamente!");            }
         } while (opcaoEscolhida < 1 || opcaoEscolhida > opcoesMenu.size());
