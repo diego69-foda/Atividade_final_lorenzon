@@ -15,7 +15,7 @@ public class App {
     private static Repositorio<Pedidos> repoPedidos = new Repositorio<>(PEDIDOS_FILE);
 
     public static void main(String[] args) {
-        carregarProdutosIniciais(); // Carrega um catálogo de produtos inicial, se necessário
+        carregarProdutosIniciais(); 
 
         while (true) {
             Video.limparTela();
@@ -45,7 +45,7 @@ public class App {
 
     private static void exibirMenuPrincipal() {
         System.out.println("===================================");
-        System.out.println("    E-COMMERCE DE ROUPAS LORENZON   ");
+        System.out.println("  E-COMMERCE DE ROUPAS DO LORENZON ");
         System.out.println("===================================");
         System.out.println("1 - Cadastrar novo cliente");
         System.out.println("2 - Fazer Login");
@@ -68,7 +68,7 @@ public class App {
         } else {
             try {
                 Clientes novoCliente = new Clientes(nome, email, senha);
-                novoCliente.validar(); // Valida os dados antes de adicionar
+                novoCliente.validar(); 
                 repoClientes.adicionar(novoCliente);
                 System.out.println("\nCliente '" + nome + "' cadastrado com sucesso!");
             } catch (Exception e) {
@@ -136,10 +136,8 @@ public class App {
                     break;
                 case 0:
                     System.out.println("Fazendo logout...");
-                    // Salva o cliente para persistir qualquer alteração no carrinho
-                    // A melhor forma é remover o antigo e adicionar o novo para "atualizar"
-                    repoClientes.remover(cliente); // Remove a versão antiga
-                    repoClientes.adicionar(cliente); // Adiciona a versão atualizada
+                    repoClientes.remover(cliente); 
+                    repoClientes.adicionar(cliente); 
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
@@ -167,7 +165,7 @@ public class App {
             return;
         }
 
-        verProdutos(carrinho); // Mostra os produtos para o usuário escolher
+        verProdutos(carrinho);
         List<Produtos> produtos = repoProdutos.listar();
         int indice = Teclado2.read("Digite o número do produto que deseja adicionar: ", Integer.class);
 
@@ -184,7 +182,6 @@ public class App {
     private static void verCarrinho(CarrinhoDeCompras carrinho) {
         Video.limparTela();
         carrinho.verItens();
-        // TODO: Adicionar opções como "Finalizar Compra" ou "Remover Item"
         Teclado2.read("Pressione Enter para voltar...", String.class);
     }
 
