@@ -1,5 +1,7 @@
 import java.io.Serializable;
 
+import exceptions.ValidationException;
+
 public class Descontos implements Entidade {
     private static final long serialVersionUID = 1L;
 
@@ -32,5 +34,15 @@ public class Descontos implements Entidade {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    @Override
+    public void validar() throws ValidationException {
+        if (codigo == null || codigo.trim().isEmpty()) {
+            throw new ValidationException("O código do desconto não pode ser vazio.");
+        }
+        if (percentual <= 0 || percentual > 100) {
+            throw new ValidationException("O percentual de desconto deve ser entre 0 e 100.");
+        }
     }
 }
