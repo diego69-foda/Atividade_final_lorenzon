@@ -43,16 +43,18 @@ public class App {
         }
     }
 
+    
+
     private static void exibirMenuPrincipal() {
-        System.out.println("===================================");
+        Video.separador(35, "=");
         System.out.println("  E-COMMERCE DE ROUPAS DO LORENZON ");
-        System.out.println("===================================");
+        Video.separador(35, "=");
         System.out.println("1 - Cadastrar novo cliente");
         System.out.println("2 - Fazer Login");
         System.out.println("3 - Ver Produtos (Acesso Visitante)");
-        System.out.println("-----------------------------------");
+        Video.separador(35);
         System.out.println("0 - Sair");
-        System.out.println("===================================");
+        Video.separador(35, "=");
     }
 
     private static void cadastrarCliente() {
@@ -104,17 +106,17 @@ public class App {
 
         while (true) {
             Video.limparTela();
-            System.out.println("===================================");
+            Video.separador(35, "=");
             System.out.println("        MENU DO CLIENTE            ");
-            System.out.println("===================================");
+            Video.separador(35, "=");
             System.out.println("1 - Ver Produtos");
             System.out.println("2 - Adicionar produto ao carrinho");
             System.out.println("3 - Ver Carrinho");
             System.out.println("4 - Finalizar Compra");
             System.out.println("5 - Ver Meus Pedidos");
-            System.out.println("-----------------------------------");
+            Video.separador(35);
             System.out.println("0 - Logout");
-            System.out.println("===================================");
+            Video.separador(35, "=");
 
             int opcao = Teclado2.read("Escolha uma opção: ", Integer.class);
 
@@ -154,7 +156,7 @@ public class App {
         for (int i = 0; i < produtos.size(); i++) {
             System.out.println((i + 1) + " - " + produtos.get(i));
         }
-        System.out.println("------------------------------------");
+        Video.separador(36);
         Teclado2.read("Pressione Enter para voltar...", String.class);
     }
 
@@ -229,7 +231,7 @@ public class App {
             System.out.println("Você ainda não fez nenhum pedido.");
         }
 
-        System.out.println("----------------------");
+        Video.separador(22);
         Teclado2.read("Pressione Enter para voltar...", String.class);
     }
 

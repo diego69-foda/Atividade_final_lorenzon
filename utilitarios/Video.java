@@ -13,7 +13,6 @@ public class Video {
     public static final String AZUL = "\u001B[34m";
     public static final String CIANO = "\u001B[36m";
 
-      
     public static void limparTela() {
         System.out.println("\033[H\033[2J"); // limpar terminal antes de começar
         System.out.flush();
@@ -22,7 +21,7 @@ public class Video {
     // --- Cabeçalho ---
     public static void cabecalho(String titulo) {
         limparTela();
-        final int larguraTotal = WIDTH_TELA; 
+        final int larguraTotal = WIDTH_TELA;
         String tituloMaiusculo = titulo.toUpperCase();
         int espacos = (larguraTotal - tituloMaiusculo.length()) / 2;
 
@@ -36,7 +35,7 @@ public class Video {
 
     // --- Rodapé ---
     public static void rodape(String texto) {
-        final int larguraTotal = WIDTH_TELA; 
+        final int larguraTotal = WIDTH_TELA;
         int espacos = (larguraTotal - texto.length()) / 2;
 
         String linha = "=".repeat(larguraTotal);
@@ -51,6 +50,13 @@ public class Video {
     public static void separador(int largura) {
         if (largura > 0) {
             String linha = "-".repeat(largura);
+            System.out.println(linha);
+        }
+    }
+
+    public static void separador(int largura, String caractere) {
+        if (largura > 0) {
+            String linha = caractere.repeat(largura);
             System.out.println(linha);
         }
     }
@@ -97,8 +103,8 @@ public class Video {
     }
 
     // --- Mensagens comum sem cor ---
-    public static void mensagem (String msg){
-        System.out.println (msg);
+    public static void mensagem(String msg) {
+        System.out.println(msg);
     }
 
     // --- Mensagens coloridas ---
@@ -118,9 +124,9 @@ public class Video {
         System.out.println(AZUL + "[INFO] " + msg + RESET);
     }
 
-    // --- Mensagem de cofirmação --- 
-    public static boolean confirmar(String pergunta) {        
-        String resposta = Teclado2.read(pergunta + " (s/n): ",String.class).trim().toLowerCase();
+    // --- Mensagem de cofirmação ---
+    public static boolean confirmar(String pergunta) {
+        String resposta = Teclado2.read(pergunta + " (s/n): ", String.class).trim().toLowerCase();
         return resposta.equals("s") || resposta.equals("sim");
     }
 
